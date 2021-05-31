@@ -1,0 +1,19 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: check-yaml  ### pour contrôler la syntaxe des fichiers YAML
+    -   id: end-of-file-fixer   ###  pour vérifier qu’un fichier finit par une ligne vide
+    -   id: trailing-whitespace  ### pour la suppression espaces en fin de ligne
+    -   id: check-added-large-files ### pour éviter l’ajout de fichiers de plus de 500 Ko.
+
+-   repo: git://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.35.0
+    hooks:
+    - id: terraform_docs  ###Inserts input and output documentation into README.md
+
+-   repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.10
+    hooks:
+
+    - id: terraform-fmt

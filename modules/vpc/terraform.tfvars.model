@@ -1,0 +1,7 @@
+availability_zones = []
+environment        = ""
+name               = ""
+private_start_ip   = ""
+public_start_ip    = ""
+subnet_prefix      = ""
+vpc_cidr           = ""

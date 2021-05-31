@@ -1,0 +1,3 @@
+variable "applications" {
+  type = map
+}

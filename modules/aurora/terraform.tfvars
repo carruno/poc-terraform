@@ -1,0 +1,11 @@
+app_name                = ""
+availability_zones      = []
+backup_retention_period = 1
+db_port                 =
+engine_type             = ""
+engine_version          = ""
+instance_class          = ""
+instances_amount        = 1
+master_db_user          = ""
+scaling_max_capacity    = ""
+scaling_min_capacity    = ""

@@ -1,0 +1,35 @@
+[
+    {
+      "name": "rabbitmq",
+      "image": "${image}",
+      "portMappings": [
+        {
+          "containerPort": 5672,
+          "hostPort": 5672,
+          "protocol": "tcp"
+        },
+        {
+          "containerPort": 15672,
+          "hostPort": 15672,
+          "protocol": "tcp"
+        },
+        {
+          "containerPort": 15692,
+          "hostPort": 15692,
+          "protocol": "tcp"
+        }
+      ],
+      "cpu": ${desired_task_cpu},
+      "memory": ${desired_task_memory},
+      "networkMode": "awsvpc",
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "${log_group}",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "rabbitmq"
+        }
+      }
+    }
+]

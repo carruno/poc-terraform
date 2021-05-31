@@ -1,0 +1,51 @@
+[
+    {
+        "name": "${container_name}",
+        "image": "${image}",
+        "essential": true,
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "${log_group}",
+                "awslogs-region": "${region}",
+                "awslogs-stream-prefix": "${container_name}"
+            }
+        },
+        "portMappings": [
+            {
+                "containerPort": 4369,
+                "hostPort": 4369,
+                "protocol": "tcp"
+            },
+            {
+                "containerPort": 5672,
+                "hostPort": 5672,
+                "protocol": "tcp"
+            },
+            {
+                "containerPort": 15672,
+                "hostPort": 15672,
+                "protocol": "tcp"
+            },
+            {
+                "containerPort": 15692,
+                "hostPort": 15692,
+                "protocol": "tcp"
+            },
+            {
+                "containerPort": 25672,
+                "hostPort": 25672,
+                "protocol": "tcp"
+            }
+        ],
+        "healthCheck": {
+            "command": [
+                "CMD-SHELL",
+                "curl localhost:15692/metrics || exit 1"
+            ],
+            "interval": 30,
+            "retries": 3,
+            "timeout": 5
+        }
+    }
+]
